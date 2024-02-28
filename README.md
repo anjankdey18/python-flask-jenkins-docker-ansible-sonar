@@ -1,3 +1,22 @@
+# Automated code build, docker image creation, docker image push into docker hub
+Pre-requisites:
+1. Jenkins is up and running
+2. Docker Installed on Jenkins instance and configured
+3. Docker plugin installed on Jenkins
+4. user account setup in dockerhub (https://cloud.docker.com)
+5. port 8096 is opened up in firewall rules on docker server.
+
+## Steps #01 - Create credentials for Docker Hub
+Go to your Jenkins where you have installed Docker as well. Go to Manage Jenkins -> Credentials -> Click on new credentials 
+Kind -> Select Username with password
+Scope -> Global 
+Username -> your dockerhub username
+Password -> Your dockerhub password
+ID -> Meaningful name (which you need to use on jenkins pipeline or jenkinsfile)
+Description -> Meaningful name
+Then Create.
+
+
 # jenkins pipeline setup
 
 # to install maven from jenkins ui
@@ -17,8 +36,17 @@ go to manage jenkins -> plugins. search ansible with available then install
 
 go to manage jenkins -> global tool configuration or tools. then scrolldown and check maven installation -> click on add asible -> name: ansible -> path to ansible executables directory will be /usr/bin/ -> check Install automatically -> apply -> save
 
-## Now create jenkins pipeline
-name of the pipeline is dockeransiblejenkins-pipeline -> build Triggers -> Pipeline
+## Steps#02: Now create jenkins pipeline
+Click on New Item -> Enter an Item name (your pipeline name. for example: pythonAppDockerSonar-pipeline)-> select Pipeline and click ok.
+
+name of the pipeline is pythonAppDockerSonar-pipeline 
+-> build Triggers(H/2**** //it will trigger every two minutes automatically) 
+-> Pipeline (Definition -> Pipeline script from SCM[meaning using jenkinsfile] -> SCM --Git Repositories --Repository URL --your repo url --Credentials your github access key/credential --Branch your branch --Script Path Your jenkinsfile)
+
+or
+
+-> build Triggers(H/2**** //it will trigger every two minutes automatically) 
+-> Pipeline (Definition -> Pipeline script from SCM[meaning using jenkinsfile] -> SCM --Git Repositories --Repository URL --your repo url --Credentials your github access key/credential --Branch your branch --Script Path Your jenkinsfile)
 
 * to write pipeline, you can use help of pipeline Syntax
 Snippet Generator => Steps -> Sample Step git:Git enter Repository URL: https://github.com/anjankdey18/dockeransiblejenkins.git enter branch: main add Credentials: click on add  user: anjankdey18 pass, id and description then select it what you enter the ID then genetate the code
