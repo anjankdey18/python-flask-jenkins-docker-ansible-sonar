@@ -6,9 +6,13 @@
       yum:
         name: python-pip
         state: present
+    - name: Uninstall podman-docker
+      yum:
+        name: podman-docker
+        state: absent
     - name: Install docker
       yum:
-        name: docker
+        name: docker-ce
         state: present
     - name: start docker
       service:
