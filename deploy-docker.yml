@@ -6,7 +6,10 @@
       yum:
         name: python-pip
         state: present
-    - name: Uninstall podman-docker
+    
+    # it was install podman-docker when yum: -> name: docker. 
+    # then executed podman-docker uninstall task
+    - name: Uninstall podman-docker 
       yum:
         name: podman-docker
         state: absent

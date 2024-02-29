@@ -1,8 +1,9 @@
 # our base image
-FROM alpine:3.5
+#FROM alpine:3.5
+FROM python:3.9-alpine
 
 # Install python and pip
-RUN apk add --update py2-pip
+RUN apk add --update py3-pip
 
 # install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
