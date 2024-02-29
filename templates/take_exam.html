@@ -1,0 +1,29 @@
+{% extends 'app.html' %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Exam</title>
+</head>
+<body>
+    <h1>Take Exam</h1>
+    <form action="/take_exam" method="post">
+        <ul>
+            {% for question in questions %}
+            <li>
+                <p>{{ question[1] }}</p>
+                <ol type="a">
+                    <li><input type="radio" name="answer{{ question[0] }}" value="1"> {{ question[2] }}</li>
+                    <li><input type="radio" name="answer{{ question[0] }}" value="2"> {{ question[3] }}</li>
+                    <li><input type="radio" name="answer{{ question[0] }}" value="3"> {{ question[4] }}</li>
+                    <li><input type="radio" name="answer{{ question[0] }}" value="4"> {{ question[5] }}</li>
+                </ol>
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit Answers</button>
+    </form>
+</body>
+
+{% endblock %}

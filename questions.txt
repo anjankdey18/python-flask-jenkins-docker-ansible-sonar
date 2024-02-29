@@ -1,0 +1,15 @@
+ 01. Which type of default map visualization uses shading to represent relative metrics?|Choropleth Map,Cluster Map,Shading Map,Marker Map|1
+ 02. Which clause can be used with the top command to specify a number of values to return?|Return,values,limit,resultcount|3
+ 03. How many columns are displayed in a visualization by displayed in a visualization by default when using the chart command?|3,20,10,5|3
+ 04. Which command can be used to exclude fields from search results?|Fields,remove,dedup,exclude|1
+ 05. When using the timechart command, which axis represents time?|The axis is specified using the by clause,X-axis,Y-axis,the axis specified using the as clause|2
+ 06. Which clause can be used with the rare command to specify whether or not a percentage column is created?|Percentage,displayperc,showperc,perccol|3
+ 07. Which command changes the appearance of filed values?|Rename,fields,format,fieldformat|4
+ 08. Which of the following commands can return a count of all events matching search criteria over a specified time period?|Where,Count,Match,Stats|4
+ 09. Which clause can be used with the top command to change the name of the count column?|Countname,Countfield,Colheader,Colname|2
+ 10. Which argument can be used with the geostats command to control the column count?|Globallimit,Logfield,Collimit,Letfield|1
+ 11. Which command removes duplicate field values in search results?|exclude,remove,dedup,fields|3
+ 12. How can the order of columns in a table be changed?|By changing the order of fields specified in the fields command,By changing the order of fields specified in the table command,By dragging and dropping in the table interface,By selecting the "Move column" option in a column header's dropdown|2
+ 13. Which optional argument of the addtotals command changes the label for row totals in a table?|Label,Fieldname,Rowlabel,Fieldformat|2
+ 14. In a single series data table, which column provides the x-axis values for a visualization?|The Fourth column,The second column,The first column,The third column|3
+ 15. Which argument can be used with the timechart command to specify the time range to use when grouping events?|Range,Timespan,Timerange,Span|4 

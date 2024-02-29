@@ -1,0 +1,23 @@
+{% extends 'app.html' %}
+{% block content %}
+
+
+<div class="container">
+  <h2>Welcome to the Admin Dashboard</h2>
+
+    {% if user %}
+        <p>user information</p>
+        <ul>
+            <li>Name : {{ user[1] }}</li>
+            <li>Email : {{ user[2] }}</li>
+        </ul>
+        <a href="/add_question" class="btn btn-dark">Add Questions</a>
+        <a href="/questions" class="btn btn-dark">Questions</a>
+        <a href="/upload" class="btn btn-dark">Upload Questions File</a>
+        <a href="/take_exam" class="btn btn-dark">Take Exam</a>
+        <a href="/exam_result" class="btn btn-dark">Result</a>
+        <a href="/logout" class="btn btn-dark">Logout</a>
+    {% endif %}
+</div>
+
+{% endblock %}
