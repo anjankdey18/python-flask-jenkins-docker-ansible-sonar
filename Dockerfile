@@ -6,7 +6,7 @@ FROM python:3.9-alpine
 RUN apk add --update py3-pip
 
 # # Update pip for Python 3
-# RUN pip install --upgrade pip
+RUN pip install --upgrade pip
 
 # install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
