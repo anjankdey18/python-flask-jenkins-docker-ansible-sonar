@@ -2,11 +2,11 @@
 #FROM alpine:3.5
 FROM python:3.9-alpine
 
-# # Install python and pip
-# RUN apk add --update py3-pip
+# Install python and pip
+RUN apk add --update py3-pip
 
-# Update pip for Python 3
-RUN pip install --upgrade pip
+# # Update pip for Python 3
+# RUN pip install --upgrade pip
 
 # install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
